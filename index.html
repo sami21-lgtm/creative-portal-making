@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glassmorphism Login</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="background-blobs">
+        <div class="blob"></div>
+        <div class="blob"></div>
+        <div class="blob"></div>
+    </div>
+
+    <div class="container">
+        <div class="glass-card">
+            <!-- Left Side -->
+            <div class="left-panel">
+                <div class="illustration">
+                    <i class="fas fa-rocket rocket-icon"></i>
+                    <!-- Ekhane rocket image thakle img tag use korben -->
+                </div>
+                <p>Just A Few Minutes Way To Boost Your Skills With UpSkill</p>
+                <div class="dots-pattern"></div>
+            </div>
+
+            <!-- Right Side -->
+            <div class="right-panel">
+                <div class="toggle-btns">
+                    <button class="active">Sign In</button>
+                    <button>Sign Up</button>
+                </div>
+                
+                <h2>Sign In</h2>
+                
+                <form id="loginForm">
+                    <div class="input-group">
+                        <input type="text" placeholder="Username" required>
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="input-group">
+                        <input type="password" placeholder="Password" required>
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <a href="#" class="forgot-pass">Forgot Password?</a>
+                    <button type="submit" class="submit-btn">Sign In <i class="fas fa-arrow-right"></i></button>
+                </form>
+
+                <div class="social-login">
+                    <a href="#"><i class="fab fa-google"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
