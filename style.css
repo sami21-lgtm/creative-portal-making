@@ -1,13 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
-* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    font-family: 'Poppins', sans-serif; 
+}
 
 body {
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    /* Image-er moto blue/purple vibrant background */
     background: #2575fc; 
     background: radial-gradient(circle at top left, #6a11cb, #2575fc, #0a0e27);
     overflow: hidden;
@@ -51,25 +55,90 @@ body {
     border-radius: 30px;
     box-shadow: 0 25px 45px rgba(0, 0, 0, 0.2);
     overflow: hidden;
+    transition: width 0.5s ease; /* Card size change animation */
 }
 
-.left-panel, .right-panel { flex: 1; padding: 40px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.left-panel, .right-panel { 
+    flex: 1; 
+    padding: 40px; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+}
 
-.left-panel { background: rgba(255, 255, 255, 0.05); color: #fff; text-align: center; }
-.rocket-icon { font-size: 80px; margin-bottom: 20px; filter: drop-shadow(0 0 10px #fff); }
+.left-panel { 
+    background: rgba(255, 255, 255, 0.05); 
+    color: #fff; 
+    text-align: center; 
+}
 
-/* Form Styles */
-h2 { color: #fff; margin-bottom: 25px; }
-.input-group { position: relative; width: 100%; margin-bottom: 15px; }
+.rocket-icon { 
+    font-size: 80px; 
+    margin-bottom: 20px; 
+    filter: drop-shadow(0 0 10px #fff); 
+}
+
+/* Form Styles - Updated for Larger Fonts */
+h2 { 
+    color: #fff; 
+    margin-bottom: 25px; 
+    font-size: 2.5rem; /* Font boro kora holo */
+    font-weight: 600;
+}
+
+.input-group { 
+    position: relative; 
+    width: 100%; 
+    margin-bottom: 15px; 
+}
+
 .input-group input {
-    width: 100%; padding: 12px 15px 12px 40px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.2);
-    background: rgba(255,255,255,0.05); color: #fff; outline: none;
+    width: 100%; 
+    padding: 15px 15px 15px 45px; /* Padding barano holo */
+    border-radius: 12px; 
+    border: 1px solid rgba(255,255,255,0.2);
+    background: rgba(255,255,255,0.05); 
+    color: #fff; 
+    outline: none;
+    font-size: 1.1rem; /* Font size barano holo */
 }
-.input-group i { position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: rgba(255,255,255,0.6); }
+
+.input-group i { 
+    position: absolute; 
+    left: 15px; 
+    top: 50%; 
+    transform: translateY(-50%); 
+    color: rgba(255,255,255,0.6); 
+    font-size: 1.1rem;
+}
+
+.forgot-pass {
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    font-size: 0.9rem;
+    display: block;
+    width: 100%;
+    text-align: right;
+    margin-bottom: 20px;
+}
 
 .submit-btn {
-    width: 100%; padding: 12px; border-radius: 10px; border: none; background: #fff; color: #000;
-    font-weight: 600; cursor: pointer; transition: 0.3s;
+    width: 100%; 
+    padding: 15px; 
+    border-radius: 12px; 
+    border: none; 
+    background: #fff; 
+    color: #000;
+    font-weight: 600; 
+    font-size: 1.2rem; /* Font size barano holo */
+    cursor: pointer; 
+    transition: 0.3s;
+}
+
+.submit-btn:hover {
+    background: #e0e0e0;
+    transform: translateY(-2px);
 }
 
 /* Profile View Styling */
@@ -83,20 +152,111 @@ h2 { color: #fff; margin-bottom: 25px; }
 }
 
 .profile-img-container {
-    width: 120px; height: 120px; border: 4px solid #fff; border-radius: 50%; 
-    margin: 0 auto 20px; overflow: hidden;
+    width: 140px; /* Ektu boro kora holo */
+    height: 140px; 
+    border: 4px solid #fff; 
+    border-radius: 50%; 
+    margin: 0 auto 20px; 
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(255,255,255,0.2);
 }
-.profile-img-container img { width: 100%; height: 100%; object-fit: cover; }
+
+.profile-img-container img { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+}
 
 .portfolio-link-btn {
-    display: inline-block; margin-top: 20px; padding: 10px 25px; background: #2575fc;
-    color: #fff; text-decoration: none; border-radius: 25px; font-weight: 600;
+    display: inline-block; 
+    margin-top: 20px; 
+    padding: 12px 30px; 
+    background: #2575fc;
+    color: #fff; 
+    text-decoration: none; 
+    border-radius: 25px; 
+    font-weight: 600;
+    transition: 0.3s;
 }
 
-.logout-btn { background: transparent; border: 1px solid #ff4b2b; color: #ff4b2b; padding: 5px 15px; border-radius: 5px; margin-top: 20px; cursor: pointer; }
+.portfolio-link-btn:hover {
+    background: #1a5fdb;
+    box-shadow: 0 5px 15px rgba(37, 117, 252, 0.4);
+}
 
-@keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+.logout-btn { 
+    background: transparent; 
+    border: 1px solid #ff4b2b; 
+    color: #ff4b2b; 
+    padding: 8px 20px; 
+    border-radius: 8px; 
+    margin-top: 20px; 
+    cursor: pointer; 
+    transition: 0.3s;
+}
 
-.social-login { margin-top: 20px; display: flex; gap: 15px; }
-.social-login a { color: #fff; font-size: 20px; opacity: 0.7; transition: 0.3s; }
-.social-login a:hover { opacity: 1; transform: scale(1.2); }
+.logout-btn:hover {
+    background: #ff4b2b;
+    color: #fff;
+}
+
+@keyframes fadeIn { 
+    from { opacity: 0; transform: translateY(20px); } 
+    to { opacity: 1; transform: translateY(0); } 
+}
+
+.social-login { 
+    margin-top: 25px; 
+    display: flex; 
+    gap: 20px; 
+}
+
+.social-login a { 
+    color: #fff; 
+    font-size: 22px; 
+    opacity: 0.7; 
+    transition: 0.3s; 
+}
+
+.social-login a:hover { 
+    opacity: 1; 
+    transform: scale(1.2); 
+}
+
+/* --- Mobile Responsive Adjustment --- */
+@media (max-width: 768px) {
+    .glass-card {
+        flex-direction: column; 
+        width: 90%;
+        height: auto;
+        min-height: 550px;
+        margin: 20px;
+        border-radius: 20px;
+    }
+
+    .left-panel {
+        display: none; /* Mobile-e left panel hide thakbe */
+    }
+
+    .right-panel {
+        width: 100%;
+        padding: 40px 20px;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .input-group input {
+        font-size: 1rem;
+        padding: 12px 12px 12px 40px;
+    }
+
+    .submit-btn {
+        font-size: 1.1rem;
+    }
+
+    .profile-view {
+        padding: 40px 20px;
+    }
+}
