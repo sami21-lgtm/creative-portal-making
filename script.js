@@ -1,34 +1,28 @@
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('loginForm');
-    const buttons = document.querySelectorAll('.toggle-btns button');
+    const leftPanel = document.querySelector('.left-panel');
+    const rightPanel = document.querySelector('.right-panel');
+    const profileView = document.getElementById('profileView');
 
-    // Toggle logic (Sign In / Sign Up button switch)
-    buttons.forEach(btn => {
-        btn.addEventListener('click', () => {
-            buttons.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-        });
-    });
-
-    // Form submission logic
     form.addEventListener('submit', (e) => {
         e.preventDefault();
         
-        // Input field theke data neya
-        const usernameInput = form.querySelector('input[type="email"]').value; // Image 2 onushare ekhane email/username thakbe
-        const passwordInput = form.querySelector('input[type="password"]').value;
+        const userInput = form.querySelector('input[type="text"]').value;
+        const passInput = form.querySelector('input[type="password"]').value;
 
         // Apnar fixed credentials
         const validName = "Md. Emtiaz Hossain Sami";
         const validPass = "12345";
 
-        // Login Check
-        if (usernameInput === validName && passwordInput === validPass) {
-            alert(`Welcome back, ${validName}! Login Successful.`);
-            // Ekhane apni chaile onno page-e redirect korte paren
-            // window.location.href = "dashboard.html";
+        if (userInput === validName && passInput === validPass) {
+            // Login panel gulo hide hobe
+            leftPanel.style.display = 'none';
+            rightPanel.style.display = 'none';
+            
+            // Profile view show hobe
+            profileView.style.display = 'block';
         } else {
-            alert("Invalid Credentials! Please try again.");
+            alert("Invalid Credentials! Try using your full name and password '12345'.");
         }
     });
 });
