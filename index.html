@@ -3,31 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Glassmorphism Login</title>
+    <title>Sami's Glassmorphism Login</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <div class="background-blobs">
-        <div class="blob"></div>
-        <div class="blob"></div>
-        <div class="blob"></div>
+        <div class="blob circle1"></div>
+        <div class="blob circle2"></div>
     </div>
 
     <div class="container">
-        <div class="glass-card">
+        <div class="glass-card" id="mainCard">
             <!-- Left Side -->
-            <div class="left-panel">
+            <div class="left-panel" id="leftPanel">
                 <div class="illustration">
                     <i class="fas fa-rocket rocket-icon"></i>
-                    <!-- Ekhane rocket image thakle img tag use korben -->
                 </div>
                 <p>Just A Few Minutes Way To Boost Your Skills With UpSkill</p>
                 <div class="dots-pattern"></div>
             </div>
 
-            <!-- Right Side -->
-            <div class="right-panel">
+            <!-- Right Side (Login Form) -->
+            <div class="right-panel" id="rightPanel">
                 <div class="toggle-btns">
                     <button class="active">Sign In</button>
                     <button>Sign Up</button>
@@ -37,11 +35,11 @@
                 
                 <form id="loginForm">
                     <div class="input-group">
-                        <input type="text" placeholder="Username" required>
+                        <input type="text" id="username" placeholder="Username" required>
                         <i class="fas fa-user"></i>
                     </div>
                     <div class="input-group">
-                        <input type="password" placeholder="Password" required>
+                        <input type="password" id="password" placeholder="Password" required>
                         <i class="fas fa-lock"></i>
                     </div>
                     <a href="#" class="forgot-pass">Forgot Password?</a>
@@ -52,8 +50,26 @@
                     <a href="#"><i class="fab fa-google"></i></a>
                     <a href="#"><i class="fab fa-facebook-f"></i></a>
                     <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-github"></i></a>
+                    <!-- Direct GitHub Link -->
+                    <a href="https://sami21-lgtm.github.io/Md.-Emtiaz-Hossain-Sami/" target="_blank"><i class="fab fa-github"></i></a>
                 </div>
+            </div>
+
+            <!-- Profile View (Hidden by default) -->
+            <div class="profile-view" id="profileView">
+                <div class="profile-img-container">
+                    <img src="https://sami21-lgtm.github.io/Md.-Emtiaz-Hossain-Sami/assets/images/profile.jpg" alt="Sami">
+                </div>
+                <h3>Md. Emtiaz Hossain Sami</h3>
+                <p>Software Engineering Student | DIU</p>
+                <div class="stats">
+                    <span><b>75%</b> Python</span>
+                    <span><b>85%</b> C++</span>
+                </div>
+                <a href="https://sami21-lgtm.github.io/Md.-Emtiaz-Hossain-Sami/" target="_blank" class="portfolio-link-btn">
+                    Visit Portfolio <i class="fas fa-external-link-alt"></i>
+                </a>
+                <button onclick="location.reload()" class="logout-btn">Logout</button>
             </div>
         </div>
     </div>
