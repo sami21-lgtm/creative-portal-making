@@ -12,50 +12,52 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #2575fc; 
-    background: radial-gradient(circle at top left, #6a11cb, #2575fc, #0a0e27);
+    /* Image-er moto vibrant blue-purple gradient */
+    background: #111442;
+    background: radial-gradient(circle at center, #1b277a 0%, #0a0e27 100%);
     overflow: hidden;
     position: relative;
 }
 
-/* Background shapes exact image match korar jonno */
+/* Background Blobs (Vibrant & Blurred) */
 .background-blobs .blob {
     position: absolute;
     z-index: -1;
-    filter: blur(60px);
-    opacity: 0.7;
+    filter: blur(80px);
+    opacity: 0.6;
 }
 
 .circle1 {
-    width: 500px;
-    height: 500px;
-    background: #ff00cc;
-    top: -100px;
-    left: -100px;
+    width: 600px;
+    height: 600px;
+    background: #3a11ff;
+    top: -10%;
+    left: -10%;
     border-radius: 50%;
 }
 
 .circle2 {
-    width: 400px;
-    height: 400px;
-    background: #3333ff;
-    bottom: -50px;
-    right: -50px;
-    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+    width: 500px;
+    height: 500px;
+    background: #ff00cc;
+    bottom: -10%;
+    right: -5%;
+    border-radius: 50%;
 }
 
-/* Glass Card exact look */
+/* Glass Card - Exact Glossy Look */
 .glass-card {
     display: flex;
     width: 850px;
-    height: 500px;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 30px;
-    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.2);
+    height: 550px;
+    background: rgba(255, 255, 255, 0.05); /* Soft transparent white */
+    backdrop-filter: blur(25px); /* Strong blur effect */
+    -webkit-backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Glossy border line */
+    border-radius: 35px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
     overflow: hidden;
-    transition: width 0.5s ease; /* Card size change animation */
+    transition: all 0.5s ease;
 }
 
 .left-panel, .right-panel { 
@@ -68,195 +70,125 @@ body {
 }
 
 .left-panel { 
-    background: rgba(255, 255, 255, 0.05); 
+    background: rgba(255, 255, 255, 0.03); /* Slightly different shade for left side */
     color: #fff; 
-    text-align: center; 
+    text-align: center;
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .rocket-icon { 
-    font-size: 80px; 
-    margin-bottom: 20px; 
-    filter: drop-shadow(0 0 10px #fff); 
+    font-size: 100px; /* Boro icon */
+    margin-bottom: 25px; 
+    color: #fff;
+    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.8)); 
 }
 
-/* Form Styles - Updated for Larger Fonts */
+/* Form Styling - Boro Fonts & Spacing */
 h2 { 
     color: #fff; 
-    margin-bottom: 25px; 
-    font-size: 2.5rem; /* Font boro kora holo */
+    margin-bottom: 30px; 
+    font-size: 2.8rem; 
     font-weight: 600;
 }
 
 .input-group { 
     position: relative; 
     width: 100%; 
-    margin-bottom: 15px; 
+    margin-bottom: 20px; 
 }
 
 .input-group input {
     width: 100%; 
-    padding: 15px 15px 15px 45px; /* Padding barano holo */
-    border-radius: 12px; 
-    border: 1px solid rgba(255,255,255,0.2);
-    background: rgba(255,255,255,0.05); 
+    padding: 16px 20px 16px 50px; 
+    border-radius: 15px; 
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.1); 
     color: #fff; 
     outline: none;
-    font-size: 1.1rem; /* Font size barano holo */
+    font-size: 1.1rem;
+    transition: 0.3s;
+}
+
+.input-group input:focus {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.4);
 }
 
 .input-group i { 
     position: absolute; 
-    left: 15px; 
+    left: 20px; 
     top: 50%; 
     transform: translateY(-50%); 
-    color: rgba(255,255,255,0.6); 
-    font-size: 1.1rem;
-}
-
-.forgot-pass {
-    color: rgba(255,255,255,0.7);
-    text-decoration: none;
-    font-size: 0.9rem;
-    display: block;
-    width: 100%;
-    text-align: right;
-    margin-bottom: 20px;
+    color: rgba(255, 255, 255, 0.7); 
+    font-size: 1.2rem;
 }
 
 .submit-btn {
     width: 100%; 
-    padding: 15px; 
-    border-radius: 12px; 
+    padding: 16px; 
+    border-radius: 15px; 
     border: none; 
     background: #fff; 
     color: #000;
-    font-weight: 600; 
-    font-size: 1.2rem; /* Font size barano holo */
+    font-weight: 700; 
+    font-size: 1.2rem; 
     cursor: pointer; 
     transition: 0.3s;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .submit-btn:hover {
-    background: #e0e0e0;
-    transform: translateY(-2px);
+    background: #f0f0f0;
+    transform: translateY(-3px);
 }
 
-/* Profile View Styling */
-.profile-view {
-    display: none;
-    width: 100%;
-    padding: 50px;
-    text-align: center;
-    color: #fff;
-    animation: fadeIn 0.5s ease-in-out;
+/* Toggle Buttons */
+.toggle-btns {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 5px;
+    border-radius: 15px;
+    margin-bottom: 30px;
 }
 
-.profile-img-container {
-    width: 140px; /* Ektu boro kora holo */
-    height: 140px; 
-    border: 4px solid #fff; 
-    border-radius: 50%; 
-    margin: 0 auto 20px; 
-    overflow: hidden;
-    box-shadow: 0 0 20px rgba(255,255,255,0.2);
-}
-
-.profile-img-container img { 
-    width: 100%; 
-    height: 100%; 
-    object-fit: cover; 
-}
-
-.portfolio-link-btn {
-    display: inline-block; 
-    margin-top: 20px; 
-    padding: 12px 30px; 
-    background: #2575fc;
-    color: #fff; 
-    text-decoration: none; 
-    border-radius: 25px; 
+.toggle-btns button {
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background: transparent;
+    color: #ccc;
     font-weight: 600;
-    transition: 0.3s;
+    cursor: pointer;
 }
 
-.portfolio-link-btn:hover {
-    background: #1a5fdb;
-    box-shadow: 0 5px 15px rgba(37, 117, 252, 0.4);
-}
-
-.logout-btn { 
-    background: transparent; 
-    border: 1px solid #ff4b2b; 
-    color: #ff4b2b; 
-    padding: 8px 20px; 
-    border-radius: 8px; 
-    margin-top: 20px; 
-    cursor: pointer; 
-    transition: 0.3s;
-}
-
-.logout-btn:hover {
-    background: #ff4b2b;
+.toggle-btns button.active {
+    background: rgba(255, 255, 255, 0.2);
     color: #fff;
 }
 
-@keyframes fadeIn { 
-    from { opacity: 0; transform: translateY(20px); } 
-    to { opacity: 1; transform: translateY(0); } 
-}
-
-.social-login { 
-    margin-top: 25px; 
-    display: flex; 
-    gap: 20px; 
-}
-
-.social-login a { 
-    color: #fff; 
-    font-size: 22px; 
-    opacity: 0.7; 
-    transition: 0.3s; 
-}
-
-.social-login a:hover { 
-    opacity: 1; 
-    transform: scale(1.2); 
-}
-
-/* --- Mobile Responsive Adjustment --- */
+/* Mobile Responsive Design */
 @media (max-width: 768px) {
     .glass-card {
         flex-direction: column; 
         width: 90%;
         height: auto;
-        min-height: 550px;
-        margin: 20px;
-        border-radius: 20px;
+        min-height: 600px;
+        border-radius: 25px;
     }
 
     .left-panel {
-        display: none; /* Mobile-e left panel hide thakbe */
+        padding: 40px 20px;
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     }
 
     .right-panel {
-        width: 100%;
         padding: 40px 20px;
     }
 
-    h2 {
-        font-size: 2rem;
-    }
-
-    .input-group input {
-        font-size: 1rem;
-        padding: 12px 12px 12px 40px;
-    }
-
-    .submit-btn {
-        font-size: 1.1rem;
-    }
-
-    .profile-view {
-        padding: 40px 20px;
-    }
+    h2 { font-size: 2.2rem; }
 }
+
+/* Social Buttons */
+.social-login { margin-top: 25px; display: flex; gap: 20px; }
+.social-login a { color: #fff; font-size: 22px; opacity: 0.8; transition: 0.3s; }
+.social-login a:hover { opacity: 1; transform: scale(1.3); }
