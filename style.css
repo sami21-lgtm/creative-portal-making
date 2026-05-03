@@ -12,14 +12,14 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    /* Exact anime city background matching your image */
-    background: url('https://images.alphacoders.com/131/1310531.jpeg') no-repeat;
+    /* Exact Anime City Background matching your image */
+    background: url('https://images.alphacoders.com/131/1310531.jpeg') no-repeat center center fixed;
     background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+    overflow-x: hidden;
     padding: 20px;
 }
 
+/* --- Navigation Bar --- */
 header {
     position: fixed;
     top: 0;
@@ -32,15 +32,40 @@ header {
     z-index: 100;
 }
 
-.logo { font-size: 2rem; color: #fff; font-weight: 700; }
-.navigation a { font-size: 1.1rem; color: #fff; text-decoration: none; font-weight: 500; margin-left: 2.5rem; }
-
-.btnLogin-popup {
-    width: 120px; height: 45px; background: transparent; border: 2px solid #fff;
-    border-radius: 8px; cursor: pointer; font-size: 1.1rem; color: #fff; font-weight: 600; margin-left: 2.5rem;
+.logo {
+    font-size: 2rem;
+    color: #fff;
+    font-weight: 700;
 }
 
-/* Glassmorphism Wrapper (PC 100% Perfection) */
+.navigation a {
+    font-size: 1.1rem;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 2.5rem;
+    transition: 0.3s;
+}
+
+.navigation a:hover {
+    color: #2575fc;
+}
+
+.btnLogin-popup {
+    width: 120px;
+    height: 45px;
+    background: transparent;
+    border: 2px solid #fff;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    color: #fff;
+    font-weight: 600;
+    margin-left: 2.5rem;
+    transition: 0.5s;
+}
+
+/* --- Glassmorphism Wrapper (100% Scale Precision) --- */
 .wrapper {
     position: relative;
     width: 100%;
@@ -50,35 +75,122 @@ header {
     border-radius: 20px;
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.6);
     padding: 40px;
-    transition: 0.5s ease;
+    text-align: center;
 }
 
 .icon-close {
-    position: absolute; top: 0; right: 0; width: 45px; height: 45px;
-    background: #162938; color: #fff; display: flex; justify-content: center;
-    align-items: center; border-bottom-left-radius: 20px; cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 45px;
+    background: #162938;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 20px;
+    cursor: pointer;
 }
 
-/* Form Styles */
-.form-box h2 { font-size: 2.2rem; color: #fff; text-align: center; }
-.input-box { position: relative; width: 100%; height: 50px; border-bottom: 2px solid #fff; margin: 30px 0; }
-.input-box label { position: absolute; top: 50%; left: 5px; transform: translateY(-50%); font-size: 1rem; color: #fff; pointer-events: none; transition: .5s; }
-.input-box input:focus~label, .input-box input:valid~label { top: -5px; }
-.input-box input { width: 100%; height: 100%; background: transparent; border: none; outline: none; font-size: 1.1rem; color: #fff; font-weight: 600; padding: 0 35px 0 5px; }
-.input-box .icon { position: absolute; right: 8px; font-size: 1.2rem; color: #fff; line-height: 57px; }
+/* --- Form Styles --- */
+.form-box h2 {
+    font-size: 2.5rem;
+    color: #fff;
+    margin-bottom: 20px;
+}
 
-.remember-forgot { font-size: .9rem; color: #fff; font-weight: 500; margin: -15px 0 15px; display: flex; justify-content: space-between; }
-.btn { width: 100%; height: 45px; background: #fff; border: none; border-radius: 8px; cursor: pointer; font-size: 1.1rem; color: #162938; font-weight: 700; }
+.input-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid #fff;
+    margin: 35px 0;
+}
 
-/* Profile Styles */
-.profile-content { text-align: center; color: #fff; }
-.profile-content img { width: 120px; height: 120px; border-radius: 50%; border: 4px solid #fff; margin-bottom: 15px; object-fit: cover; }
-.portfolio-btn { display: inline-block; margin-top: 20px; padding: 10px 25px; background: #fff; color: #162938; text-decoration: none; border-radius: 8px; font-weight: 700; }
+.input-box label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1rem;
+    color: #fff;
+    pointer-events: none;
+    transition: 0.5s;
+}
 
-/* Mobile Responsive adjustment */
+.input-box input:focus~label,
+.input-box input:valid~label {
+    top: -5px;
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1.1rem;
+    color: #fff;
+    font-weight: 600;
+    padding: 0 35px 0 5px;
+}
+
+.input-box .icon {
+    position: absolute;
+    right: 8px;
+    color: #fff;
+    font-size: 1.2rem;
+    line-height: 57px;
+}
+
+.btn {
+    width: 100%;
+    height: 50px;
+    background: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: #162938;
+    font-weight: 700;
+}
+
+/* --- Profile Styling --- */
+.profile-card {
+    display: none;
+    animation: fadeIn 0.5s ease forwards;
+}
+
+.profile-card img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    border: 4px solid #fff;
+    margin-bottom: 20px;
+    object-fit: cover;
+}
+
+.portfolio-btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background: #fff;
+    color: #162938;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 700;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Mobile Responsive Adjustment --- */
 @media (max-width: 768px) {
+    header { padding: 1rem 5%; }
     .navigation { display: none; }
-    .wrapper { width: 95%; padding: 30px 20px; }
+    .wrapper { width: 95%; padding: 35px 20px; }
 }
