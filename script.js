@@ -1,36 +1,30 @@
 document.addEventListener('DOMContentLoaded', () => {
     const loginForm = document.getElementById('animeLoginForm');
-    const loginWrapper = document.getElementById('loginWrapper');
-    const animeProfile = document.getElementById('animeProfile');
-    const formBox = document.querySelector('.form-box.login');
-    const btnPopup = document.querySelector('.btnLogin-popup');
-    const iconClose = document.querySelector('.icon-close');
+    const loginBox = document.getElementById('loginBox');
+    const profileBox = document.getElementById('profileBox');
+    const wrapper = document.getElementById('mainWrapper');
 
-    // FIXED CREDENTIALS
-    const validUser = "sami"; // Apnar name o use korte paren
+    // Apnar Credentials
+    const validUser = "sami"; 
     const validPass = "12345";
 
     loginForm.addEventListener('submit', (e) => {
         e.preventDefault();
         
-        const user = document.getElementById('animeUser').value.trim();
-        const pass = document.getElementById('animePass').value;
+        const user = document.getElementById('userInput').value.trim();
+        const pass = document.getElementById('passInput').value;
 
+        // Login Success Logic
         if ((user === validUser || user === "Md. Emtiaz Hossain Sami") && pass === validPass) {
-            formBox.style.display = 'none';
-            animeProfile.style.display = 'block';
-            loginWrapper.style.height = '480px';
+            loginBox.style.display = 'none';
+            profileBox.style.display = 'block';
+            wrapper.style.height = '480px';
         } else {
-            alert("Invalid Credentials! Please try 'sami' and '12345'");
+            alert("Invalid Credentials! Please use 'sami' and '12345'.");
         }
     });
 
-    iconClose.addEventListener('click', () => {
-        loginWrapper.style.transform = 'scale(0)';
-    });
-
-    btnPopup.addEventListener('click', () => {
-        loginWrapper.style.transform = 'scale(1)';
-        loginWrapper.style.display = 'flex';
+    document.querySelector('.icon-close').addEventListener('click', () => {
+        wrapper.style.display = 'none';
     });
 });
