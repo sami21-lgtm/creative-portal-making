@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
+/* --- Global Reset --- */
 * {
     margin: 0;
     padding: 0;
@@ -12,13 +13,15 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    /* Fixed background loading issue */
-    background: #060818 url('https://images.alphacoders.com/131/1310531.jpeg') no-repeat center center fixed;
+    /* Apnar chobi background hisebe set kora holo with a dark overlay */
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                url('https://sami21-lgtm.github.io/Md.-Emtiaz-Hossain-Sami/assets/images/profile.jpg') no-repeat center center fixed;
     background-size: cover;
     overflow: hidden;
     padding: 20px;
 }
 
+/* --- Navigation Bar --- */
 header {
     position: fixed;
     top: 0;
@@ -32,7 +35,11 @@ header {
     animation: fadeInDown 1s ease;
 }
 
-.logo { font-size: 2rem; color: #fff; font-weight: 700; }
+.logo {
+    font-size: 2rem;
+    color: #fff;
+    font-weight: 700;
+}
 
 .navigation a {
     font-size: 1.1rem;
@@ -43,8 +50,31 @@ header {
     transition: 0.3s;
 }
 
-.navigation a:hover { color: #2575fc; text-shadow: 0 0 10px #2575fc; }
+.navigation a:hover {
+    color: #2575fc;
+    text-shadow: 0 0 10px #2575fc;
+}
 
+.btnLogin-popup {
+    width: 120px;
+    height: 45px;
+    background: transparent;
+    border: 2px solid #fff;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    color: #fff;
+    font-weight: 600;
+    margin-left: 2.5rem;
+    transition: 0.5s;
+}
+
+.btnLogin-popup:hover {
+    background: #fff;
+    color: #162938;
+}
+
+/* --- Animated Glass Wrapper --- */
 .wrapper {
     position: relative;
     width: 100%;
@@ -52,7 +82,8 @@ header {
     background: rgba(255, 255, 255, 0.1);
     border: 2px solid rgba(255, 255, 255, 0.5);
     border-radius: 20px;
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
     box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
     padding: 40px;
     text-align: center;
@@ -78,11 +109,11 @@ header {
 
 .icon-close:hover { background: #ff4b2b; }
 
+/* --- Form Box Styles --- */
 .form-box h2 {
     font-size: 2.5rem;
     color: #fff;
     margin-bottom: 20px;
-    animation: fadeIn 1s ease;
 }
 
 .input-box {
@@ -101,7 +132,7 @@ header {
     outline: none;
     font-size: 1.1rem;
     color: #fff;
-    font-weight: 500;
+    font-weight: 600;
     padding: 0 35px 0 5px;
 }
 
@@ -110,13 +141,25 @@ header {
     top: 50%;
     left: 5px;
     transform: translateY(-50%);
+    font-size: 1rem;
     color: #fff;
-    transition: 0.5s;
+    font-weight: 500;
     pointer-events: none;
+    transition: 0.5s;
 }
 
 .input-box input:focus~label,
-.input-box input:valid~label { top: -5px; }
+.input-box input:valid~label {
+    top: -5px;
+}
+
+.input-box .icon {
+    position: absolute;
+    right: 8px;
+    color: #fff;
+    font-size: 1.2rem;
+    line-height: 57px;
+}
 
 .btn {
     width: 100%;
@@ -129,6 +172,7 @@ header {
     color: #162938;
     font-weight: 700;
     transition: 0.5s;
+    margin-top: 10px;
 }
 
 .btn:hover {
@@ -138,7 +182,7 @@ header {
     box-shadow: 0 10px 20px rgba(37, 117, 252, 0.4);
 }
 
-/* Profile Section Animation */
+/* --- Profile Card Styling (After Login) --- */
 .profile-card {
     display: none;
     animation: profileReveal 0.6s ease-out forwards;
@@ -149,11 +193,26 @@ header {
     height: 130px;
     border-radius: 50%;
     border: 4px solid #fff;
-    object-fit: cover;
     margin-bottom: 20px;
+    object-fit: cover;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
 }
 
-/* Animations */
+.profile-card h3 { color: #fff; font-size: 1.6rem; margin-bottom: 5px; }
+.profile-card p { color: rgba(255, 255, 255, 0.8); margin-bottom: 25px; }
+
+.portfolio-btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background: #fff;
+    color: #162938;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+/* --- Animations --- */
 @keyframes wrapperAppear {
     from { opacity: 0; transform: scale(0.5); }
     to { opacity: 1; transform: scale(1); }
@@ -169,8 +228,10 @@ header {
     to { opacity: 1; transform: translateY(0); }
 }
 
+/* --- Mobile Perfection --- */
 @media (max-width: 768px) {
     header { padding: 1rem 5%; }
     .navigation { display: none; }
-    .wrapper { width: 95%; padding: 35px 20px; }
+    .wrapper { width: 95%; padding: 40px 20px; }
+    .form-box h2 { font-size: 2rem; }
 }
