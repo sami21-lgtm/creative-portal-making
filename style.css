@@ -1,76 +1,173 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
-* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    font-family: 'Poppins', sans-serif; 
+}
 
 body {
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    background: url('https://images.alphacoders.com/131/1310531.jpeg') no-repeat;
-    background-size: cover;
-    background-position: center;
+    background: #111442;
+    background: radial-gradient(circle at center, #1b277a 0%, #0a0e27 100%);
+    overflow-x: hidden; /* Mobile horizontally scroll bondho korbe */
+    padding: 20px;
 }
 
-header {
-    position: absolute;
-    top: 0;
-    left: 0;
+/* Background Vibrant Blobs */
+.background-blobs .blob {
+    position: absolute; 
+    z-index: -1; 
+    filter: blur(80px); 
+    opacity: 0.6;
+}
+.circle1 { width: 40vw; height: 40vw; background: #3a11ff; top: -10%; left: -10%; border-radius: 50%; }
+.circle2 { width: 35vw; height: 35vw; background: #ff00cc; bottom: -10%; right: -5%; border-radius: 50%; }
+
+/* Glass Card Structure */
+.glass-card {
+    display: flex; 
     width: 100%;
-    padding: 20px 100px;
-    display: flex;
-    justify-content: space-between;
+    max-width: 850px; /* PC-te maximum size */
+    min-height: 500px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 30px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+    position: relative;
+    transition: all 0.4s ease-in-out;
+}
+
+/* Common Panel Style */
+.left-panel, .right-panel { 
+    flex: 1; 
+    padding: 40px; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+}
+
+.left-panel { 
+    background: rgba(255, 255, 255, 0.03); 
+    color: #fff; 
+    text-align: center; 
+}
+
+.rocket-icon { 
+    font-size: clamp(50px, 8vw, 80px); /* Screen onushare icon size adjust hobe */
+    margin-bottom: 20px; 
+    filter: drop-shadow(0 0 10px #fff); 
+}
+
+/* Form Styles */
+h2 { 
+    color: #fff; 
+    margin-bottom: 25px; 
+    font-size: clamp(1.8rem, 5vw, 2.5rem); /* Responsive Font */
+    font-weight: 600; 
+}
+
+.input-group { 
+    position: relative; 
+    width: 100%; 
+    max-width: 320px;
+    margin-bottom: 15px; 
+}
+
+.input-group input {
+    width: 100%; 
+    padding: 15px 15px 15px 45px; 
+    border-radius: 12px; 
+    border: 1px solid rgba(255,255,255,0.2);
+    background: rgba(255,255,255,0.08); 
+    color: #fff; 
+    outline: none; 
+    font-size: 1rem;
+}
+
+.input-group i { 
+    position: absolute; 
+    left: 15px; 
+    top: 50%; 
+    transform: translateY(-50%); 
+    color: rgba(255,255,255,0.6); 
+}
+
+.submit-btn {
+    width: 100%; 
+    max-width: 320px;
+    padding: 15px; 
+    border-radius: 12px; 
+    border: none; 
+    background: #fff; 
+    color: #000;
+    font-weight: 600; 
+    font-size: 1.1rem; 
+    cursor: pointer; 
+    transition: 0.3s;
+}
+
+/* Profile View Styling */
+.profile-view {
+    width: 100%; 
+    padding: 40px; 
+    text-align: center; 
+    color: #fff;
+    display: none; /* JS handle korbe */
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center;
+}
+
+.profile-img-container {
+    width: 130px; height: 130px; 
+    border: 4px solid #fff; 
+    border-radius: 50%;
+    margin-bottom: 20px; 
+    overflow: hidden; 
+    display: flex; 
+    justify-content: center; 
     align-items: center;
-    z-index: 99;
+}
+.profile-img-container img { width: 100%; height: 100%; object-fit: cover; }
+
+/* --- PC & Tablet Adjustment (100% perfection) --- */
+@media (min-width: 769px) {
+    .glass-card.logged-in {
+        width: 450px; /* Login er por card choto hoye jabe */
+    }
 }
 
-.logo { font-size: 2em; color: #fff; user-select: none; }
-.navigation a { font-size: 1.1em; color: #fff; text-decoration: none; font-weight: 500; margin-left: 40px; }
-
-.btnLogin-popup {
-    width: 130px; height: 50px; background: transparent; border: 2px solid #fff;
-    border-radius: 6px; cursor: pointer; font-size: 1.1em; color: #fff; font-weight: 500; margin-left: 40px;
-}
-
-/* Glassmorphism Wrapper */
-.wrapper {
-    position: relative; width: 400px; height: 440px;
-    background: rgba(255, 255, 255, 0.1);
-    border: 2px solid rgba(255, 255, 255, .5);
-    border-radius: 20px; backdrop-filter: blur(20px);
-    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
-    display: flex; justify-content: center; align-items: center; overflow: hidden;
-}
-
-.icon-close {
-    position: absolute; top: 0; right: 0; width: 45px; height: 45px;
-    background: #162938; font-size: 2em; color: #fff;
-    display: flex; justify-content: center; align-items: center;
-    border-bottom-left-radius: 20px; cursor: pointer; z-index: 1;
-}
-
-.form-box h2 { font-size: 2.2em; color: #fff; text-align: center; }
-
-.input-box { position: relative; width: 100%; height: 50px; border-bottom: 2px solid #fff; margin: 30px 0; }
-.input-box label { position: absolute; top: 50%; left: 5px; transform: translateY(-50%); font-size: 1.1em; color: #fff; font-weight: 500; pointer-events: none; transition: .5s; }
-.input-box input:focus~label, .input-box input:valid~label { top: -5px; }
-
-.input-box input { width: 100%; height: 100%; background: transparent; border: none; outline: none; font-size: 1.1em; color: #fff; font-weight: 600; padding: 0 35px 0 5px; }
-.input-box .icon { position: absolute; right: 8px; font-size: 1.2em; color: #fff; line-height: 57px; }
-
-.remember-forgot { font-size: .9em; color: #fff; font-weight: 500; margin: -15px 0 15px; display: flex; justify-content: space-between; }
-.btn { width: 100%; height: 45px; background: #fff; border: none; border-radius: 6px; cursor: pointer; font-size: 1.1em; color: #162938; font-weight: 600; }
-
-.login-register { font-size: .9em; color: #fff; text-align: center; font-weight: 500; margin: 25px 0 10px; }
-.login-register p a { color: #fff; text-decoration: none; font-weight: 600; }
-
-/* Profile After Login */
-.profile-content { text-align: center; color: #fff; padding: 20px; }
-.profile-content img { width: 120px; border-radius: 50%; border: 3px solid #fff; margin-bottom: 10px; }
-.portfolio-btn { display: inline-block; margin-top: 15px; padding: 10px 20px; background: #fff; color: #162938; text-decoration: none; border-radius: 6px; font-weight: 600; }
-
-/* Desktop Adjustment */
+/* --- Mobile Responsive (Perfectly Adjusts) --- */
 @media (max-width: 768px) {
-    header { padding: 20px 50px; }
-    .navigation { display: none; }
+    .glass-card { 
+        flex-direction: column; 
+        height: auto; 
+        min-height: 550px; 
+    }
+    
+    .left-panel { 
+        padding: 30px 20px;
+        order: 2; /* Form ke upore rakhar jonno logic change kora jay */
+    }
+    
+    /* Mobile-e shudhu login form-er proyojon beshi hole left panel hide kora thake */
+    .left-panel { display: none; } 
+    
+    .right-panel { 
+        padding: 50px 20px; 
+        width: 100%;
+    }
+    
+    .submit-btn, .input-group {
+        max-width: 100%; /* Full width mobile-e */
+    }
 }
