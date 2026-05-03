@@ -3,11 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sami's Anime Portal</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Sami's Anime Portal | Glassmorphism</title>
+    <!-- FontAwesome icons er jonno -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <header>
         <h2 class="logo">Logo</h2>
         <nav class="navigation">
@@ -19,13 +21,13 @@
         </nav>
     </header>
 
-    <div class="wrapper" id="mainWrapper">
+    <div class="wrapper">
         <span class="icon-close"><i class="fas fa-times"></i></span>
         
-        <!-- Login Form -->
-        <div class="form-box login" id="loginBox">
+        <!-- Login Form Section -->
+        <div class="form-box" id="loginArea">
             <h2>Login</h2>
-            <form id="animeLoginForm">
+            <form id="loginForm">
                 <div class="input-box">
                     <span class="icon"><i class="fas fa-envelope"></i></span>
                     <input type="text" id="userInput" required>
@@ -42,19 +44,18 @@
                 </div>
                 <button type="submit" class="btn">Login</button>
                 <div class="login-register">
-                    <p>Don't have an account? <a href="#" class="register-link">Register</a></p>
+                    <p>Don't have an account? <a href="#">Register</a></p>
                 </div>
             </form>
         </div>
 
-        <!-- Profile View (Login-er por eti show korbe) -->
-        <div class="profile-card" id="profileBox" style="display: none;">
-            <div class="profile-content">
-                <img src="https://sami21-lgtm.github.io/Md.-Emtiaz-Hossain-Sami/assets/images/profile.jpg" alt="Md. Emtiaz Hossain Sami">
-                <h3>Md. Emtiaz Hossain Sami</h3>
-                <p>Software Engineering Student | DIU</p>
-                <a href="https://sami21-lgtm.github.io/Md.-Emtiaz-Hossain-Sami/" target="_blank" class="portfolio-btn">View Portfolio</a>
-            </div>
+        <!-- Profile Section (Login successful hole eti show hobe) -->
+        <div class="profile-card" id="profileArea">
+            <img src="https://sami21-lgtm.github.io/Md.-Emtiaz-Hossain-Sami/assets/images/profile.jpg" alt="Sami">
+            <h3>Md. Emtiaz Hossain Sami</h3>
+            <p>Software Engineering Student | DIU</p>
+            <a href="https://sami21-lgtm.github.io/Md.-Emtiaz-Hossain-Sami/" target="_blank" class="portfolio-btn">View My Portfolio</a>
+            <p style="margin-top: 15px;"><a href="javascript:location.reload()" style="color: #fff; text-decoration: underline;">Logout</a></p>
         </div>
     </div>
 
