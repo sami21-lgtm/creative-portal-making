@@ -1,194 +1,76 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-* { 
-    margin: 0; 
-    padding: 0; 
-    box-sizing: border-box; 
-    font-family: 'Poppins', sans-serif; 
-}
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
 
 body {
-    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    /* Image-er moto vibrant blue-purple gradient */
-    background: #111442;
-    background: radial-gradient(circle at center, #1b277a 0%, #0a0e27 100%);
-    overflow: hidden;
-    position: relative;
+    min-height: 100vh;
+    background: url('https://images.alphacoders.com/131/1310531.jpeg') no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
-/* Background Blobs (Vibrant & Blurred) */
-.background-blobs .blob {
+header {
     position: absolute;
-    z-index: -1;
-    filter: blur(80px);
-    opacity: 0.6;
-}
-
-.circle1 {
-    width: 600px;
-    height: 600px;
-    background: #3a11ff;
-    top: -10%;
-    left: -10%;
-    border-radius: 50%;
-}
-
-.circle2 {
-    width: 500px;
-    height: 500px;
-    background: #ff00cc;
-    bottom: -10%;
-    right: -5%;
-    border-radius: 50%;
-}
-
-/* Glass Card - Exact Glossy Look */
-.glass-card {
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
     display: flex;
-    width: 850px;
-    height: 550px;
-    background: rgba(255, 255, 255, 0.05); /* Soft transparent white */
-    backdrop-filter: blur(25px); /* Strong blur effect */
-    -webkit-backdrop-filter: blur(25px);
-    border: 1px solid rgba(255, 255, 255, 0.2); /* Glossy border line */
-    border-radius: 35px;
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
-    overflow: hidden;
-    transition: all 0.5s ease;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
 }
 
-.left-panel, .right-panel { 
-    flex: 1; 
-    padding: 40px; 
-    display: flex; 
-    flex-direction: column; 
-    align-items: center; 
-    justify-content: center; 
+.logo { font-size: 2em; color: #fff; user-select: none; }
+.navigation a { font-size: 1.1em; color: #fff; text-decoration: none; font-weight: 500; margin-left: 40px; }
+
+.btnLogin-popup {
+    width: 130px; height: 50px; background: transparent; border: 2px solid #fff;
+    border-radius: 6px; cursor: pointer; font-size: 1.1em; color: #fff; font-weight: 500; margin-left: 40px;
 }
 
-.left-panel { 
-    background: rgba(255, 255, 255, 0.03); /* Slightly different shade for left side */
-    color: #fff; 
-    text-align: center;
-    border-right: 1px solid rgba(255, 255, 255, 0.05);
+/* Glassmorphism Wrapper */
+.wrapper {
+    position: relative; width: 400px; height: 440px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, .5);
+    border-radius: 20px; backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    display: flex; justify-content: center; align-items: center; overflow: hidden;
 }
 
-.rocket-icon { 
-    font-size: 100px; /* Boro icon */
-    margin-bottom: 25px; 
-    color: #fff;
-    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.8)); 
+.icon-close {
+    position: absolute; top: 0; right: 0; width: 45px; height: 45px;
+    background: #162938; font-size: 2em; color: #fff;
+    display: flex; justify-content: center; align-items: center;
+    border-bottom-left-radius: 20px; cursor: pointer; z-index: 1;
 }
 
-/* Form Styling - Boro Fonts & Spacing */
-h2 { 
-    color: #fff; 
-    margin-bottom: 30px; 
-    font-size: 2.8rem; 
-    font-weight: 600;
-}
+.form-box h2 { font-size: 2.2em; color: #fff; text-align: center; }
 
-.input-group { 
-    position: relative; 
-    width: 100%; 
-    margin-bottom: 20px; 
-}
+.input-box { position: relative; width: 100%; height: 50px; border-bottom: 2px solid #fff; margin: 30px 0; }
+.input-box label { position: absolute; top: 50%; left: 5px; transform: translateY(-50%); font-size: 1.1em; color: #fff; font-weight: 500; pointer-events: none; transition: .5s; }
+.input-box input:focus~label, .input-box input:valid~label { top: -5px; }
 
-.input-group input {
-    width: 100%; 
-    padding: 16px 20px 16px 50px; 
-    border-radius: 15px; 
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    background: rgba(255, 255, 255, 0.1); 
-    color: #fff; 
-    outline: none;
-    font-size: 1.1rem;
-    transition: 0.3s;
-}
+.input-box input { width: 100%; height: 100%; background: transparent; border: none; outline: none; font-size: 1.1em; color: #fff; font-weight: 600; padding: 0 35px 0 5px; }
+.input-box .icon { position: absolute; right: 8px; font-size: 1.2em; color: #fff; line-height: 57px; }
 
-.input-group input:focus {
-    background: rgba(255, 255, 255, 0.15);
-    border-color: rgba(255, 255, 255, 0.4);
-}
+.remember-forgot { font-size: .9em; color: #fff; font-weight: 500; margin: -15px 0 15px; display: flex; justify-content: space-between; }
+.btn { width: 100%; height: 45px; background: #fff; border: none; border-radius: 6px; cursor: pointer; font-size: 1.1em; color: #162938; font-weight: 600; }
 
-.input-group i { 
-    position: absolute; 
-    left: 20px; 
-    top: 50%; 
-    transform: translateY(-50%); 
-    color: rgba(255, 255, 255, 0.7); 
-    font-size: 1.2rem;
-}
+.login-register { font-size: .9em; color: #fff; text-align: center; font-weight: 500; margin: 25px 0 10px; }
+.login-register p a { color: #fff; text-decoration: none; font-weight: 600; }
 
-.submit-btn {
-    width: 100%; 
-    padding: 16px; 
-    border-radius: 15px; 
-    border: none; 
-    background: #fff; 
-    color: #000;
-    font-weight: 700; 
-    font-size: 1.2rem; 
-    cursor: pointer; 
-    transition: 0.3s;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
+/* Profile After Login */
+.profile-content { text-align: center; color: #fff; padding: 20px; }
+.profile-content img { width: 120px; border-radius: 50%; border: 3px solid #fff; margin-bottom: 10px; }
+.portfolio-btn { display: inline-block; margin-top: 15px; padding: 10px 20px; background: #fff; color: #162938; text-decoration: none; border-radius: 6px; font-weight: 600; }
 
-.submit-btn:hover {
-    background: #f0f0f0;
-    transform: translateY(-3px);
-}
-
-/* Toggle Buttons */
-.toggle-btns {
-    background: rgba(255, 255, 255, 0.05);
-    padding: 5px;
-    border-radius: 15px;
-    margin-bottom: 30px;
-}
-
-.toggle-btns button {
-    border: none;
-    padding: 10px 20px;
-    border-radius: 10px;
-    background: transparent;
-    color: #ccc;
-    font-weight: 600;
-    cursor: pointer;
-}
-
-.toggle-btns button.active {
-    background: rgba(255, 255, 255, 0.2);
-    color: #fff;
-}
-
-/* Mobile Responsive Design */
+/* Desktop Adjustment */
 @media (max-width: 768px) {
-    .glass-card {
-        flex-direction: column; 
-        width: 90%;
-        height: auto;
-        min-height: 600px;
-        border-radius: 25px;
-    }
-
-    .left-panel {
-        padding: 40px 20px;
-        border-right: none;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    }
-
-    .right-panel {
-        padding: 40px 20px;
-    }
-
-    h2 { font-size: 2.2rem; }
+    header { padding: 20px 50px; }
+    .navigation { display: none; }
 }
-
-/* Social Buttons */
-.social-login { margin-top: 25px; display: flex; gap: 20px; }
-.social-login a { color: #fff; font-size: 22px; opacity: 0.8; transition: 0.3s; }
-.social-login a:hover { opacity: 1; transform: scale(1.3); }
