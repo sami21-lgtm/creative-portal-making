@@ -1,8 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const loginForm = document.getElementById('animeLoginForm');
-    const loginBox = document.getElementById('loginBox');
-    const profileBox = document.getElementById('profileBox');
-    const wrapper = document.getElementById('mainWrapper');
+    const loginForm = document.getElementById('loginForm');
+    const loginArea = document.getElementById('loginArea');
+    const profileArea = document.getElementById('profileArea');
 
     // Apnar Credentials
     const validUser = "sami"; 
@@ -14,17 +13,17 @@ document.addEventListener('DOMContentLoaded', () => {
         const user = document.getElementById('userInput').value.trim();
         const pass = document.getElementById('passInput').value;
 
-        // Login Success Logic
-        if ((user === validUser || user === "Md. Emtiaz Hossain Sami") && pass === validPass) {
-            loginBox.style.display = 'none';
-            profileBox.style.display = 'block';
-            wrapper.style.height = '480px';
+        // Login Check Logic
+        if ((user === "sami" || user === "Md. Emtiaz Hossain Sami") && pass === "12345") {
+            loginArea.style.display = 'none';
+            profileArea.style.display = 'block';
         } else {
-            alert("Invalid Credentials! Please use 'sami' and '12345'.");
+            alert("Bhul Credentials! Username: sami, Password: 12345");
         }
     });
 
+    // Close Button logic
     document.querySelector('.icon-close').addEventListener('click', () => {
-        wrapper.style.display = 'none';
+        document.querySelector('.wrapper').style.transform = 'scale(0)';
     });
 });
