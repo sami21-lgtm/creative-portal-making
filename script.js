@@ -1,28 +1,36 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const form = document.getElementById('loginForm');
-    const leftPanel = document.querySelector('.left-panel');
-    const rightPanel = document.querySelector('.right-panel');
-    const profileView = document.getElementById('profileView');
+    const loginForm = document.getElementById('animeLoginForm');
+    const loginWrapper = document.getElementById('loginWrapper');
+    const animeProfile = document.getElementById('animeProfile');
+    const formBox = document.querySelector('.form-box.login');
+    const btnPopup = document.querySelector('.btnLogin-popup');
+    const iconClose = document.querySelector('.icon-close');
 
-    form.addEventListener('submit', (e) => {
+    // FIXED CREDENTIALS
+    const validUser = "sami"; // Apnar name o use korte paren
+    const validPass = "12345";
+
+    loginForm.addEventListener('submit', (e) => {
         e.preventDefault();
         
-        const userInput = form.querySelector('input[type="text"]').value;
-        const passInput = form.querySelector('input[type="password"]').value;
+        const user = document.getElementById('animeUser').value.trim();
+        const pass = document.getElementById('animePass').value;
 
-        // Apnar fixed credentials
-        const validName = "Md. Emtiaz Hossain Sami";
-        const validPass = "12345";
-
-        if (userInput === validName && passInput === validPass) {
-            // Login panel gulo hide hobe
-            leftPanel.style.display = 'none';
-            rightPanel.style.display = 'none';
-            
-            // Profile view show hobe
-            profileView.style.display = 'block';
+        if ((user === validUser || user === "Md. Emtiaz Hossain Sami") && pass === validPass) {
+            formBox.style.display = 'none';
+            animeProfile.style.display = 'block';
+            loginWrapper.style.height = '480px';
         } else {
-            alert("Invalid Credentials! Try using your full name and password '12345'.");
+            alert("Invalid Credentials! Please try 'sami' and '12345'");
         }
+    });
+
+    iconClose.addEventListener('click', () => {
+        loginWrapper.style.transform = 'scale(0)';
+    });
+
+    btnPopup.addEventListener('click', () => {
+        loginWrapper.style.transform = 'scale(1)';
+        loginWrapper.style.display = 'flex';
     });
 });
